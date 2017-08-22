@@ -1,8 +1,0 @@
-[
-  {
-    "name": "tb-robots-app",
-    "script": "./app.js",
-    "exec_mode": "cluster_mode",
-    "instances": 1
-  }
-]

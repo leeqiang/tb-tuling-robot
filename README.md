@@ -3,13 +3,19 @@ Teambition 图灵机器人
 
 ## 创建 teambition 应用
 
-1、访问 [Teambition 开发者中心](https://developer.teambition.com)，创建应用后，选择「`Webhook 配置`」，填入地址`http://{host}/robotapp/tuling`(本服务的地址)
+1、访问 [Teambition 开发者中心](https://developer.teambition.com)，创建应用后，选择「`Webhook 配置`」，填入地址`http://{host}/robotapp/tuling`(本服务的地址), 开启「消息能力」
+
+![](assets/setup-webhook.jpeg)
+
+![](assets/setup-robot.jpeg)
 
 2、复制应用的信息到配置文件`config/release.json`
 
 ## 注册 图灵机器人 账号
 - 图灵接口地址
 - 图灵接口调用key
+
+![](assets/setup-tuling.jpeg)
 
 (补充到配置文件)
 
@@ -28,6 +34,9 @@ Teambition 图灵机器人
 ## 运行
 
 补充`config/release.json`中缺失了配置后，运行`NODE_ENV=release node app`
+
+## DEMO
+![](assets/demo.jpeg)
 
 ## 其他
 - [teambition 消息能力介绍](http://help.teambition.net/开发者中心/消息能力)
