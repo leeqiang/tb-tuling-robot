@@ -1,0 +1,13 @@
+{
+  "name": "tb-tuling-robot",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "config": "^1.26.1",
+    "koa": "v1.2.0",
+    "koa-body": "v1.4.0",
+    "koa-router": "v5.4.0",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0"
+  }
+}

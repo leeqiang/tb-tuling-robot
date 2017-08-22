@@ -1,0 +1,12 @@
+{
+  "port": 10093,
+  "client_id": "09750330-6c26-11e7-bf0e-23c3135d7a90",
+  "client_secret": "d9ff7d84-4f02-4c30-b7cf-16de6740c543",
+  "route": "/robotapp/tuling",
+  "tu_url": "http://www.tuling123.com/openapi/api",
+  "tu_key": "f2920ce871c744a7a058983847770f22",
+  "tu_error_text": "[我的服务器出现了一些异常，你可能需要稍后重试了 >>>]",
+  "tb_developer_api": "http://project.ci/appstore/api/developer/chats/message",
+  "tb_key": "45a34ce54d5522b5c3895e84be82c0bd",
+  "hook_expired": 30000
+}

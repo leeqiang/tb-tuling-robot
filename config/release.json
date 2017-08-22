@@ -1,0 +1,12 @@
+{
+  "port": 10093,
+  "client_id": "",
+  "client_secret": "",
+  "route": "/robotapp/tuling",
+  "tu_url": "http://www.tuling123.com/openapi/api",
+  "tu_key": "",
+  "tu_error_text": "[我的服务器出现了一些异常，你可能需要稍后重试了 >>>]",
+  "tb_developer_api": "https://www.teambition.com/appstore/api/developer/chats/message",
+  "tb_key": "",
+  "hook_expired": 30000
+}
