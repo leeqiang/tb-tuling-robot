@@ -24,8 +24,23 @@ router.post(config.route, function * () {
   if (eventType === 'message') {
     Chat.tu(uid, message.comment, _.noop)
   } else if (eventType === 'install') {
-    let { user } = this.request.body.data
-    Chat.tb(user._id, `${user.name} 你好，现在你可以和我开始聊天了。`)
+    let { user, organization, project } = this.request.body.data
+    let msg = `${user.name} 你好，现在你可以和我聊天了。`
+    if (organization) {
+      msg = `${user.name} 你好，发现你在企业「${organization.name}」中开启了我。`
+    } else if (project) {
+      msg = `${user.name} 你好，发现你在项目「${project.name}」中开启了我。`
+    }
+    Chat.tb(user._id, msg)
+  } else if (eventType === 'uninstall') {
+    let { user, organization, project } = this.request.body.data
+    let msg = ''
+    if (organization) {
+      msg = `${user.name} 你好，发现你在企业「${organization.name}」中关闭了我`
+    } else if (project) {
+      msg = `${user.name} 你好，发现你在项目「${project.name}」中关闭了我。`
+    }
+    if (msg) Chat.tb(user._id, msg)
   }
   this.body = {}
 })
