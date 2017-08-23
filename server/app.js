@@ -20,11 +20,11 @@ const app = new Koa()
 */
 router.post(config.route, function * () {
   if (!utils.checkWebhookSign(this.query)) throw new Error('invalidWebhook')
-  let { message, uid, eventType } = this.request.body
+  let { data, eventType } = this.request.body
+  let { user, organization, project, message } = data
   if (eventType === 'message') {
-    Chat.tu(uid, message.comment, _.noop)
+    Chat.tu(user._id, message.comment, _.noop)
   } else if (eventType === 'install') {
-    let { user, organization, project } = this.request.body.data
     let msg = `${user.name} 你好，现在你可以和我聊天了。`
     if (organization) {
       msg = `${user.name} 你好，发现你在企业「${organization.name}」中开启了我。`
@@ -33,7 +33,6 @@ router.post(config.route, function * () {
     }
     Chat.tb(user._id, msg)
   } else if (eventType === 'uninstall') {
-    let { user, organization, project } = this.request.body.data
     let msg = ''
     if (organization) {
       msg = `${user.name} 你好，发现你在企业「${organization.name}」中关闭了我`
