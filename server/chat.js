@@ -35,7 +35,7 @@ const requestToTuling = function (_userId, text, callback) {
 /**
  * 发送消息到 teambition
  */
-const requestToTb = function (_userId, text, callback = _.noop) {
+exports.tb = function (_userId, text, callback = _.noop) {
   request({
     url: config.tb_developer_api,
     method: 'POST',
@@ -52,10 +52,10 @@ const requestToTb = function (_userId, text, callback = _.noop) {
   }, callback)
 }
 
-module.exports = function (_userId, message, callback) {
+exports.tu = function (_userId, message, callback) {
   requestToTuling(_userId, message, function (err, tuText) {
     // handle error
     if (err || !tuText) tuText = config.tu_error_text
-    requestToTb(_userId, tuText)
+    exports.tb(_userId, tuText)
   })
 }
